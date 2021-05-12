@@ -6,8 +6,8 @@
             "destination": "speedrun.uk.to",
             "destination_port": 25565,
             "match": "en-UN",
-            "failover": "github.com",
-            "failover_port": 443
+            "failover": "service.mcsrv.icu",
+            "failover_port": 80
         }
     }
 }

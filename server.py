@@ -75,7 +75,7 @@ class ForwardServer():
         self.worker_recv.setDaemon(True)
         self.worker_recv.start()
 
-        # print('Forward:', instance, address, f2048b)
+        print('Forward:', instance, address, f2048b)
 
     def worker(self, a, b):
         'From a --> b'
