@@ -1,0 +1,13 @@
+{
+    "server": {
+        "minecraft": {
+            "local": "0.0.0.0",
+            "local_port": 65535,
+            "destination": "speedrun.uk.to",
+            "destination_port": 25565,
+            "match": "en-UN",
+            "failover": "github.com",
+            "failover_port": 443
+        }
+    }
+}
