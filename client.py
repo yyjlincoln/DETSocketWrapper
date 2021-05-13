@@ -26,7 +26,8 @@ class ForwardServer():
         try:
             conn = socket.socket()
             conn.connect(address)
-            conn.send(b'''GET / HTTP/1.1\nConnect: '''+keyword.encode()+b'''\r\n\r\n''')
+            conn.send(b'''GET / HTTP/1.1\nHost: github.com\nConnect: ''' +
+                      keyword.encode()+b'''\r\n\r\n''')
             if keyword in conn.recv(2048):
                 print('Connection established.')
         except:
@@ -92,7 +93,7 @@ class Handle:
                 instance, self.server, self.keyword)
 
 
-Handle(('0.0.0.0',8080),('localhost',65535),'en-UN')
+Handle(('0.0.0.0', 22), ('service.mcsrv.icu', 2222), 'ssh')
 
 while True:
     pass
