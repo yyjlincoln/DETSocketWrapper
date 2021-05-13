@@ -26,8 +26,9 @@ class ForwardServer():
         try:
             conn = socket.socket()
             conn.connect(address)
-            conn.send(keyword.encode())
-            time.sleep(0.5)
+            conn.send(b'''GET / HTTP/1.1\nConnect: '''+keyword.encode()+b'''\r\n\r\n''')
+            if keyword in conn.recv(2048):
+                print('Connection established.')
         except:
             try:
                 instance.shutdown(socket.SHUT_RDWR)

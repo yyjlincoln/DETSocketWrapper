@@ -124,6 +124,8 @@ class Router():
         # Attempt to match
         for name in self.config:
             if name in f2048decode:
+                # Response a HTTP request back to the client
+                self.instance.send(b'HTTP/1.1 200 OK\nServer: '+name.encode()+b'\r\n\r\n')
                 self.final = ForwardServer(
                     self.instance, (Servers[self.config[name]]['destination'], Servers[self.config[name]]['destination_port']))
                 print('Matched to:', self.config[name])
